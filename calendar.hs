@@ -52,7 +52,7 @@ padding number str = str ++ (replicate (number - (length str)) ' ')
 calCells = (replicate cell1 "") ++ [ show d | d <- [1..lastday] ] ++ (replicate cell2 "")
           where lastday = totalDays
                 cell1 = startDate
-                cell2 = (7-(totalDays-29-startDate)-1)
+                cell2 = (7-(totalDays-(29-startDate)-1))
 
 splitEvery :: Int -> [a] -> [[a]]
 splitEvery _ [] = []
